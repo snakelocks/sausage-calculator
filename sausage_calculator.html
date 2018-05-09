@@ -1,0 +1,61 @@
+<html>
+  <head>
+  <script src="sausage_calculator.js"></script>
+</head>
+<body>
+<form>
+<table  cellspacing="4" cellpadding="3" style="text-align: left; margin-left:auto;margin-right: auto">
+<tr>
+<th colspan="2" style="text-align: center;">Recipe Calculator</th>
+</tr>
+  <tr>
+    <td>Meat and Fat</td>
+    <td>
+      <input  type="text" id="meatGm" value="1000" size="6" maxlength="10" /> gm
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" style="text-align: center">
+      <input  type="button" value="Calculate" onclick="calcForm()" name="button" />
+    </td>
+  </tr>
+
+  <tr>
+    <td>Cure #2</td>
+    <td>
+      <input  type="text" id="ingreedient_1" style="font-weight: bold" size="5" maxlength="10" disabled="true" /> gm
+      <input  type="hidden" id="ppk_1" value="2.5" />
+    </td>
+  </tr>
+
+  <tr>
+    <td>Salt</td>
+    <td>
+      <input  type="text" id="ingreedient_2" style="font-weight: bold" size="5" maxlength="10" disabled="true" /> gm
+      <input  type="hidden" id="ppk_2" value="5.5" />
+    </td>
+  </tr>
+
+  <tr>
+    <td>Casing</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <select id="casing_select">
+        <option value="sheep">Sheep</option>
+        <option value="hog">Hog</option>
+        <option value="beef_runner">Beef Runner</option>
+        <option value="beef_middle">Beef Middle</option>
+      </select>
+    </td>
+    <td>
+      <input  type="text" id="casing" style="font-weight: bold" size="5" maxlength="10" disabled="true" /> m
+    </td>
+  </tr>
+
+</table>
+</form>
+</body>
+</html>
