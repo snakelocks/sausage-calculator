@@ -1,9 +1,12 @@
 function calcForm() {
   var meatGm = document.getElementById('meatGm').value;
+  if (isNaN(meatGm)) {
+    return;
+  }
   for (i=1; i<30; i++) {
     var ppkElementId = 'ppk_' + i;
     var ppkElement = document.getElementById(ppkElementId);
-    var formElementId = 'ingreedient_' + i;
+    var formElementId = 'part_' + i;
     var formElement = document.getElementById(formElementId);
     if (ppkElement != null && formElement != null) {
       var gm = ppkElement.value;
