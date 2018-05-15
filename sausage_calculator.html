@@ -1,6 +1,6 @@
 <html>
   <head>
-  <script src="sausage_calculator.js"></script>
+  <script src="sausage-calculator.js"></script>
 </head>
 <body>
 <form>
@@ -17,14 +17,15 @@
 
   <tr>
     <td colspan="2" style="text-align: center">
-      <input  type="button" value="Calculate" onclick="calcForm()" name="button" />
+      <input  type="button" value="Calculate" onclick="calcForm()"  />
+      <input  type="button" value="Clear"     onclick="clearForm()" />
     </td>
   </tr>
 
   <tr>
     <td>Cure #2</td>
     <td>
-      <input  type="text" id="ingreedient_1" style="font-weight: bold" size="5" maxlength="10" disabled="true" /> gm
+      <input  type="text" id="part_1" style="font-weight: bold" size="5" maxlength="10" disabled="true" /> gm
       <input  type="hidden" id="ppk_1" value="2.5" />
     </td>
   </tr>
@@ -32,7 +33,7 @@
   <tr>
     <td>Salt</td>
     <td>
-      <input  type="text" id="ingreedient_2" style="font-weight: bold" size="5" maxlength="10" disabled="true" /> gm
+      <input  type="text" id="part_2" style="font-weight: bold" size="5" maxlength="10" disabled="true" /> gm
       <input  type="hidden" id="ppk_2" value="5.5" />
     </td>
   </tr>
@@ -43,7 +44,7 @@
   </tr>
   <tr>
     <td>
-      <select id="casing_select">
+      <select id="casing_select" onchange="calcForm()">
         <option value="sheep">Sheep</option>
         <option value="hog">Hog</option>
         <option value="beef_runner">Beef Runner</option>

@@ -1,13 +1,15 @@
+var MAX_PARTS = 30;
 function calcForm() {
   var meatGm = document.getElementById('meatGm').value;
   if (isNaN(meatGm)) {
     return;
   }
-  for (i=1; i<30; i++) {
+  for (i=1; i<MAX_PARTS; i++) {
     var ppkElementId = 'ppk_' + i;
     var ppkElement = document.getElementById(ppkElementId);
     var formElementId = 'part_' + i;
     var formElement = document.getElementById(formElementId);
+//  alert('ppkElement=' + ppkElement + ', formElement=' + formElement);
     if (ppkElement != null && formElement != null) {
       var gm = ppkElement.value;
       formElement.value = calcElement(gm, meatGm);
@@ -38,8 +40,23 @@ function calcCasing(gm) {
   if (casingSelectElement != null && casingElement != null) {
     var casingType = casingSelectElement.value;
     var casingLengthPerKilo = casingMetersPerKilo[casingType];
-    var casingLength = casingLengthPerKilo * gm / 1000;
-    casingElement.value = casingLength;
+    if (isNaN(casingLengthPerKilo)) {
+      casingElement.value = '';
+    } else {
+      var casingLength = casingLengthPerKilo * gm / 1000;
+      casingElement.value = casingLength;
+    }
+  }
+}
+
+function clearForm() {
+  document.getElementById('meatGm').value='';
+  for (i=1; i<MAX_PARTS; i++) {
+    var formElementId = 'part_' + i;
+    var formElement = document.getElementById(formElementId);
+    if (formElement != null) {
+      formElement.value = '';
+    }
   }
 
 }
